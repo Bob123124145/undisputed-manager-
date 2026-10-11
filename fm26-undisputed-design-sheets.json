@@ -1,0 +1,34 @@
+{
+  "_readme": "Source of truth for the mashup. Change a sheet before changing code. null = unfilled/unverified cell; the preflight must list every null and every unresolved reference before a build. Never copy game files: reference them where they are via the folder tokens.",
+  "games": [
+    { "id": "host", "slug": "pc-football-manager-26", "role": "primary", "folderToken": "{game}", "launch": "kind game (store-detected) or exe {game}/<actual executable>", "modRoute": null, "engineAndLanguage": null, "verified": false },
+    { "id": "companion", "slug": "pc-undisputed", "role": "companion", "folderToken": "{game:pc-undisputed}", "launch": "null (decide whether it must run at all; fights are shown as results)", "modRoute": null, "engineAndLanguage": null, "verified": false }
+  ],
+  "gym": [
+    { "id": "gym_player", "startingBudget": null, "startingFighters": 0, "maxFighters": null, "facilityLevel": 1, "reputation": null, "verified": false }
+  ],
+  "fighters": [
+    { "id": "fighter_from_undisputed", "source": "{game:pc-undisputed}", "sourceFiles": null, "name": null, "weightClass": null, "ratings": null, "age": null, "signingCost": null, "wage": null, "contractLength": null, "verified": false }
+  ],
+  "scouting": [
+    { "id": "scout_screen_start", "fightersShown": null, "filter": "affordable on starting budget", "pickCount": 1, "verified": false }
+  ],
+  "training": [
+    { "id": "train_weekly", "cadence": "weekly", "focuses": null, "effectOnRatings": null, "fatigueCost": null, "injuryChance": null, "verified": false }
+  ],
+  "fights": [
+    { "id": "fight_offer_first", "triggerAfter": "first signing", "opponentSource": "{game:pc-undisputed}", "opponentPick": null, "purse": null, "resolution": "simulated result from both fighters' ratings", "resultTextShown": true, "verified": false }
+  ],
+  "ai_gyms": [
+    { "id": "ai_gym", "count": null, "behavior": "sign fighters, accept fight offers", "difficulty": null, "verified": false }
+  ],
+  "hooks_into_host": [
+    { "id": "add_boxing_screens", "purpose": "scouting, gym, training and fight-offer screens inside the host", "method": null, "verified": false },
+    { "id": "read_fighter_roster", "purpose": "read the real Undisputed roster from the player's own install", "method": null, "verified": false },
+    { "id": "weekly_tick", "purpose": "advance training, contracts and fight offers each in-game week", "method": null, "verified": false },
+    { "id": "save_state", "purpose": "keep gym, fighters and results between sessions", "method": null, "verified": false }
+  ],
+  "listing": [
+    { "title": "Fight Camp Manager", "tagline": "Run a boxing gym inside Football Manager 26, with Undisputed's real fighters.", "description": "Start with an empty gym and a small budget, scout boxers from your own Undisputed install, sign one, train weekly and take fight offers. Solo career. Needs both games installed; nothing from either game is copied.", "multiplayer": false, "credits": "TBD (name not yet given)", "license": "credit only", "remixAllowed": false, "requiredGames": ["pc-football-manager-26", "pc-undisputed"], "screenshot": null, "oneClickCheck": null, "testPassed": false }
+  ]
+}
